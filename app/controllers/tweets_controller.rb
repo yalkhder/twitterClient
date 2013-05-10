@@ -3,7 +3,6 @@ class TweetsController < ApplicationController
   # GET /tweets.json
   def index
     Tweet.get_tweets
-    @count = Tweet.count
     @tweets = Tweet.find(:all, :order => "tweetID desc", :limit => 50)
 
     respond_to do |format|

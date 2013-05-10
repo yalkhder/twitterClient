@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<!-- <p id="notice"><%= notice %></p>
 
 <p>
   <b>Name:</b>
@@ -22,4 +22,17 @@
 
 
 <%= link_to 'Edit', edit_tweet_path(@tweet) %> |
+<%= link_to 'Back', tweets_path %> -->
+
+<div>
+	<div style="float:left">
+	<%= image_tag("#{@tweet.picURL}")%>
+	</div>
+	<div>
+		<h3>@<%= @tweet.account%></h3>
+		<h2><%= @tweet.name%><h2>
+		<p><%= @tweet.message%></p>
+	</div>
+</div>
+
 <%= link_to 'Back', tweets_path %>

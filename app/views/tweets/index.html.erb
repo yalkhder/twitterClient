@@ -1,6 +1,8 @@
-<h1>Listing tweets</h1>
+<div id="banner">
+	<h1 id="title">#bieber</h1>
+</div>
 
-<table>
+<!-- <table>
   <tr>
 	<th></th>
     <th>Name</th>
@@ -18,14 +20,25 @@
     <td><%= tweet.name %></td>
     <td><%= "@#{tweet.account}" %></td>
     <td><%= tweet.message %></td>
-    <!-- <td><%= tweet.picURL %></td> -->
     <td><%= link_to 'Show', tweet %></td>
-    <!-- <td><%= link_to 'Edit', edit_tweet_path(tweet) %></td>
-        <td><%= link_to 'Destroy', tweet, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td> -->
+        <td><%= link_to 'Destroy', tweet, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
   </tr>
 <% end %>
-</table>
+</table> -->
 
 <br />
 
 <!-- <%= link_to 'New Tweet', new_tweet_path %> -->
+
+<% @tweets.each do |tweet| %>
+	<div class="tweet">
+		<div class="tweet_image">
+			<%= image_tag("#{tweet.picURL}")%>
+		</div>
+		<div class="tweet_info">
+			<h3 class="account">@<%= tweet.account%></h3>
+			<h2 class="username"><%= tweet.name%></h2>
+			<p><%= link_to "#{tweet.message}", tweet%><p>
+		</div>
+	</div>
+<% end %>
